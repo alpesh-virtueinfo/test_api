@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function show_back()
+{
+    var product_name = $("#product_product").val();
+    $.ajax({
+        type: 'POST',
+        url: '/api/index',
+        data: 'product_name='+product_name,
+        success: function(d) {
+            $("#content").html(d);
+        }
+    });
+}

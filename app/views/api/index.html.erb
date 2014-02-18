@@ -1,21 +1,29 @@
+<div id="content">
 <h3 align="center">Product List</h3>
+<div align="center">
+<%= text_field(:product, :product, :placeholder => 'Products', :value => @product_name) %>
+<%= submit_tag "Search", :disable_with => 'Saving changes', :onclick => "show_back()" %>
+</div><br />
 <table border="1" width="90%" align="center">
 <tr>
     <td>Categoty Id</td>
     <td>Name</td>
     <td>Model</td>
-    <td>Weight</td>
     <td>Price</td>
     <td>Brand</td>
 </tr>
+<% unless @productsHash.empty? %>
 <% @productsHash.each do | f | %>
     <tr>
         <td><%= f["cat_id"] %></td>
         <td><%= f["name"] %></td>
         <td><%= f["model"] %></td>
-        <td><%= f["weight"] %></td>
         <td><%= f["price"] %></td>
         <td><%= f["brand"] %></td>
     </tr>
 <% end %>
+<% else %>
+    <tr><td colspan="6" align="center">No Data Found!</td></tr>
+<% end %>
 </table>
+<div>
