@@ -1,0 +1,21 @@
+<h3 align="center">Product List</h3>
+<table border="1" width="90%" align="center">
+<tr>
+    <td>Categoty Id</td>
+    <td>Name</td>
+    <td>Model</td>
+    <td>Weight</td>
+    <td>Price</td>
+    <td>Brand</td>
+</tr>
+<% @productsHash.each do | f | %>
+    <tr>
+        <td><%= f["cat_id"] %></td>
+        <td><%= f["name"] %></td>
+        <td><%= f["model"] %></td>
+        <td><%= f["weight"] %></td>
+        <td><%= f["price"] %></td>
+        <td><%= f["brand"] %></td>
+    </tr>
+<% end %>
+</table>
